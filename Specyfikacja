@@ -1,0 +1,17 @@
+Projekt może być robiony w grupach dwuosobowych. 
+Obie osoby dostają tyle samo punktów.
+
+Wymagania:
+- Django lub Ruby on Rails,
+- min. 4 tabele (wliczając tabelę użytkowników) z których każda jest połączona relacją inną niż 1-1 z jakąś inną tabelą, dla każdej tabeli powinna być akcja w ramach aplikacji która jakoś modyfikuje jej zawartość (usuwa, zmienia, dodaje rekordy), mniejsza ilość tabel oznacza -7 punktów za każdą tabelę mniej, do tej puli nie będą wliczane tabele które mogłyby być zamienione na typy wyliczeniowe,
+- autoryzacja (pewne zasoby dostępne tylko dla ról takich jak 'zalogowany' 'admin', różne opcje nawigacji dla różnych ról, rola jest przydzielana po zalogowaniu), brak ról i autoryzacji oznavcza -10 punktów,
+- uwierzytelnianie, dodawanie nowych użytkowników (rejestracja),
+- zasoby statyczne,
+- min. 3 formularze,
+- wgrywanie na serwer plików, brak możliwości wgrywania plików oznacza 10 punktów mniej,
+- wszystkie funkcjonalności muszą być dostępne w ramach aplikacji (nie ma czegoś takiego: 'żeby zrobić to a to trzeba wejść do aplikacji administratora aby usunąć ręcznie rekord'),
+- obsługa relacji za pomocą ORM - aplikacja nie może wykorzystywać kluczy głównych i obcych do przechodzenia miedzy tabelami,
+- powinny być zrobione własne strony do obsługi błędów (np 404),
+- temat projektu dowolny,
+- łańcuchy tekstu (np URLe) nie powinny być porozrzucane po kodzie ale umieszczone w jednym pliku - porozrzucane łańcuchy tekstu to -10 punktów,
+- strona powinna również ładnie wyglądać i powinna tworzyć pewną całość (nie może być niezaimplementowanych funkcjonalności),
