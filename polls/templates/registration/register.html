@@ -1,10 +1,18 @@
-{% block title %}Create an account{% endblock %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
 {% block content %}
-<h1>Create an account</h1>
+<center>
+    <div class="alert alert-info">
+<h3>
+Create an account
+</h3>
+    </div>
 
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Create the account">
+    <input type="submit" class="btn btn-primary" value="Create the account">
 </form>
+    </center>
 {% endblock %}
+{% include "base.html" %}
