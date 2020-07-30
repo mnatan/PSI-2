@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+{% block content %}
+
+<center>
+{% if form.errors %}
+    <div class="alert alert-danger">
+<h3>
+Sorry, that's not a valid username or password
+</h3>
+    </div>
+{% endif %}
+
+<form action="" method="post">{% csrf_token %}
+    <div style="max-width: 400px;">
+        <ul class="list-group">
+            <li class="list-group-item">
+<label for="username">User name:</label>
+<input type="text" name="username" value="" id="username">
+            </li>
+            <li class="list-group-item">
+<label for="password">Password:</label>
+<input type="password" name="password" value="" id="password">
+            </li>
+            <li class="list-group-item">
+            <input type="submit" class="btn btn-primary" value="login" />
+<input type="hidden" name="next" value="{{ next|escape }}" />
+            </li>
+        </ul>
+    </div>
+</form>
+
+</center>
+{% endblock %}
+{% include "base.html" %}

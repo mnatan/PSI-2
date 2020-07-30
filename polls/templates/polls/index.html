@@ -1,0 +1,53 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+<center>
+
+{% if user.is_authenticated %}
+    <div class="alert alert-success">
+<h4>
+Logged in as {{ user.username }}. 
+</h4>
+<a href="accounts/logout"><button class="btn btn-primary">Log out</button></a>
+    </div>
+
+    <h3>Questions:</h3>
+    {% if latest_question_list %}
+    <div style="max-width: 400px;">
+        <ul class="list-group">
+        {% for question in latest_question_list %}
+        <a href="{% url 'polls:detail' question.id %}">
+            <li class="list-group-item">
+                {{ question.question_text }}
+            </li>
+        </a>
+        {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+{% else %}
+    <div class="alert alert-info">
+<h4>
+Anonymous user.
+</h4>
+    </div>
+    <a href="accounts/login"><button class="btn btn-primary">Log in</button></a>
+    <a href="registration/register.html"><button class="btn btn-primary">Register</button></a>
+<br>
+<br>
+    <div class="alert alert-info">
+<h4>
+Questions available only for authenticated users.
+</h4>
+    </div>
+{% endif %}
+
+<br><br>
+<a href="{% url 'polls:upload' %}"><button class="btn btn-success">Upload a file</button></a>
+
+</center>
+
+{% include "base.html" %}
